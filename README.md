@@ -1,4 +1,4 @@
-# RA2311033010046 — Backend Engineering Hackathon
+# RA2311033010046 — Backend Engineering
 
 > A full-stack systems-thinking exercise built across three connected services:
 > a reusable logging middleware, a vehicle-maintenance scheduler that runs
