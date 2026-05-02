@@ -465,3 +465,11 @@ those is a deliberate omission, discussed in
 > Built as a single-author submission for the Backend Engineering
 > Hackathon evaluation track.
 > Roll number: **RA2311033010046**.
+
+---
+
+## License
+
+This project is released under the [MIT License](LICENSE). You are
+free to use, modify, and distribute the code, provided the original
+copyright notice is preserved.
