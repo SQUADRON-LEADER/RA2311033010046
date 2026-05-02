@@ -28,6 +28,7 @@
 12. [What I Learned](#what-i-learned)
 13. [Tech Stack](#tech-stack)
 14. [Repo Hygiene](#repo-hygiene)
+15. [License](#license)
 
 ---
 
