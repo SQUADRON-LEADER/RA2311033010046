@@ -485,3 +485,5 @@ copyright notice is preserved.
 Maintained by **RA2311033010046** as part of the Backend Engineering
 Hackathon submission. Contributions, questions, and reviews are welcome
 through the project's issue tracker.
+
+> Released under the MIT License — see [LICENSE](LICENSE) for full terms.
