@@ -474,3 +474,11 @@ those is a deliberate omission, discussed in
 This project is released under the [MIT License](LICENSE). You are
 free to use, modify, and distribute the code, provided the original
 copyright notice is preserved.
+
+---
+
+## Author
+
+Maintained by **RA2311033010046** as part of the Backend Engineering
+Hackathon submission. Contributions, questions, and reviews are welcome
+through the project's issue tracker.
