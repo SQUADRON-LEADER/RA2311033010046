@@ -383,3 +383,53 @@ worker.process(job):
   catch error:
     log("error", "handler", "Failed: " + student_id)
     throw error  // BullMQ auto-retries up to 3 times
+
+---
+
+## Stage 6
+
+### Priority Inbox — Top N Notifications
+
+### Priority Score Formula
+typeWeight : Placement=3, Result=2, Event=1
+minutesAgo : (currentTime - notificationTime) / 60000
+recencyScore: 1000 / (minutesAgo + 1)
+priorityScore = (typeWeight × 1000) + recencyScore
+
+Placement always outranks Result and Event.
+Among same type, more recent = higher score.
+
+### Algorithm: Min-Heap of Size N
+
+**Why NOT sorting?**
+Sorting all M notifications = O(M log M)
+Must completely re-sort when new notification arrives.
+For 50,000 notifications arriving in real-time,
+this is too slow and does not scale.
+
+**Why Min-Heap?**
+- Build heap over M items = O(M log N)
+- Adding one new notification = O(log N)
+- When N=10 and M=50,000 → dramatically faster
+- Heap always maintains exactly the top N items
+
+**How the min-heap works:**
+1. Min-heap keeps LOWEST priority score at the top
+2. For each incoming notification:
+   - If heap.size < N → push directly
+   - Else if score > heap.minimum → pop min, push new
+3. After processing all M notifications:
+   - Heap contains exactly the top N items
+4. Extract and sort descending for display
+
+**Handling new real-time notifications (WebSocket):**
+On new "new_notification" socket event:
+  1. Compute priorityScore instantly
+  2. If score > current heap minimum → swap in O(log N)
+  3. UI re-renders with updated top N
+  No re-sorting of all M notifications needed.
+
+### Running the Code
+node priority_inbox.js 10   → top 10
+node priority_inbox.js 15   → top 15
+node priority_inbox.js 20   → top 20
