@@ -1,5 +1,8 @@
 # RA2311033010046 — Backend Engineering
 
+![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
+![Node.js](https://img.shields.io/badge/Node.js-Express-green.svg)
+
 > A full-stack systems-thinking exercise built across three connected services:
 > a reusable logging middleware, a vehicle-maintenance scheduler that runs
 > 0/1 knapsack across multiple depots, and a priority inbox that ranks
